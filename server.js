@@ -1,10 +1,10 @@
-const express =require ('express')
+const express = require('express')
 const app = express()
 const port = 3000
-const indexRoutes=require ('./router/index.js')
-const connectDB=require('./config/db')
-
+const db=require('./config/db.js')
+const routesIndex=require('./router/index')
 
 app.use(express.json())
-app.use('/',indexRoutes)
-app.listen(port, () => console.log(`Example app listening on port ${port}!`))
+app.use('/',routesIndex)
+app.get('/', (req, res) => res.send('Hello World!'))
+app.listen(port, () => console.log(`Example app listening on port ${port}!`)) 
