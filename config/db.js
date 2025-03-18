@@ -10,7 +10,7 @@ const pool=new pg.Pool({
     password:process.env.DB_PASSWORD,
     host:process.env.DB_HOST,
     connectionString: process.env.DB_URL,
-    // ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
+    ssl: process.env.NODE_ENV === 'production' ? { rejectUnauthorized: false } : false,
     
 
 })
